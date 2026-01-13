@@ -1,23 +1,23 @@
-import "../styles/shapeDivs.css";
-import Cta from "../components/sections/Cta";
-import Faq from "../components/sections/Faq";
-import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
-import Steps from "../components/sections/Steps";
-import Features from "../components/sections/Features";
-import Navbar from "../components/sections/NavbarSocial";
-import FooterSocial from "../components/sections/FooterSocial";
-import AboutInstagram from "../components/sections/AboutInstagram";
-import BackToTopButton from "../components/interactives/BackToTopButton";
-import FloatingWhatsappButton from "../components/interactives/FloatingWhatsappButton";
-import Maps from "../components/sections/Maps";
-import TeamCards from "../components/sections/TeamCards";
-import BlogPosts from "../components/sections/BlogPosts";
-import CtaSecondary from "../components/sections/CtaSecondary";
+import '../styles/shapeDivs.css'
+import Cta from '../components/sections/Cta'
+import Faq from '../components/sections/Faq'
+import Hero from '../components/sections/Hero'
+import About from '../components/sections/About'
+import Steps from '../components/sections/Steps'
+import Features from '../components/sections/Features'
+import Navbar from '../components/sections/NavbarSocial'
+import FooterSocial from '../components/sections/FooterSocial'
+import AboutInstagram from '../components/sections/AboutInstagram'
+import BackToTopButton from '../components/interactives/BackToTopButton'
+import FloatingWhatsappButton from '../components/interactives/FloatingWhatsappButton'
+import Maps from '../components/sections/Maps'
+import TeamCards from '../components/sections/TeamCards'
+import BlogPosts from '../components/sections/BlogPosts'
+import CtaSecondary from '../components/sections/CtaSecondary'
 
 export default function Index() {
   // Altere esta constante para: 'default', 'light' ou 'dark'
-  const colorMode = "default";
+  const colorMode = 'default'
 
   return (
     <>
@@ -32,11 +32,11 @@ export default function Index() {
       />
       <Features
         colorMode={colorMode}
-        defaultFeature={true}
+        defaultFeature={false}
         button={false}
         modalWithCards={false}
         paragraphs={false}
-        sixCards={false}
+        sixCards={true}
         paragraphsModal={false}
       />
       <About modal={true} showGallery={false} colorMode={colorMode} />
@@ -63,5 +63,5 @@ export default function Index() {
       <FloatingWhatsappButton />
       <BackToTopButton />
     </>
-  );
+  )
 }
