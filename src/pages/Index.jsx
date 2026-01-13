@@ -14,6 +14,7 @@ import Maps from '../components/sections/Maps'
 import TeamCards from '../components/sections/TeamCards'
 import BlogPosts from '../components/sections/BlogPosts'
 import CtaSecondary from '../components/sections/CtaSecondary'
+import FormWithPdf from '../components/sections/FormWithPdf'
 
 export default function Index() {
   // Altere esta constante para: 'default', 'light' ou 'dark'
@@ -49,6 +50,7 @@ export default function Index() {
       <CtaSecondary />
       <Steps colorMode={colorMode} />
       <BlogPosts />
+      <FormWithPdf />
       <Faq colorMode={colorMode} />
       <Maps colorMode={colorMode} />
       <FooterSocial
