@@ -19,13 +19,16 @@ const FormPdf = () => {
 
   let pdf1 = PDF_CAPA
   let pdf2 = ''
+  let assunto = ''
 
   if (options === 'Dívida rural') {
     pdf2 = PDF_DIVIDA
+    assunto = 'Dívida rural'
   }
 
   if (options === 'Usucapião extrajudicial') {
     pdf2 = PDF_USUCAPIAO
+    assunto = 'Usucapião extrajudicial'
   }
 
   const capitalizeFirstLetter = (str) => {
@@ -101,20 +104,27 @@ const FormPdf = () => {
       to_email: email,
       pdf1,
       pdf2,
+      assunto,
     }
 
     try {
-      const response = await emailjs.send(
-        'service_fds980s', //id serviço
-        'template_jjkun8m', //id template
+      // escritório
+      await emailjs.send(
+        'service_wu06787',
+        'template_62rfwev', // template interno
         templateParams,
-        'HkoWapgpzEJhNjsHU' // chave publica
+        'F5bEnXEBh6iLD4Og-'
       )
-      console.log(
-        'Mensagem enviada com sucesso:',
-        response.status,
-        response.text
+
+      // cliente
+      const response = await emailjs.send(
+        'service_wu06787',
+        'template_un6n2h9', // template cliente
+        templateParams,
+        'F5bEnXEBh6iLD4Og-'
       )
+
+      console.log('Emails enviados com sucesso', response.status)
 
       setName('')
       setPhone('')
@@ -122,13 +132,15 @@ const FormPdf = () => {
       setUf('')
       setoptions('')
       setIsSubmitting(false)
+
       alert(
-        'Recebemos os seus dados com sucesso! Em breve nossa equipe entrará em contato. Obrigado!'
+        'Recebemos os seus dados com sucesso! Em breve nossa equipe entrará em contato.'
       )
+
       window.location.reload()
     } catch (error) {
-      console.error('Erro ao enviar o e-mail:', error)
-      alert('Houve um erro ao enviar o e-mail. Tente novamente.')
+      console.error('Erro ao enviar os e-mails:', error)
+      alert('Houve um erro ao enviar. Tente novamente.')
       setIsSubmitting(false)
     }
   }
