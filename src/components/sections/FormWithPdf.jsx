@@ -18,6 +18,10 @@ function FormWithPdf() {
             />
           </div>
           <FormPdf />
+          <p className="font-secondFont text-paragraph3 mt-6 text-white text-center desktop1:w-[60%] desktop3:w-[45%]">
+            O material tem caráter exclusivamente informativo, não substitui
+            consulta jurídica e não garante resultados.
+          </p>
         </SectionWrapper>
       </SectionArea>
     </div>
