@@ -331,7 +331,7 @@ const content = {
         img: featuresImg4,
         title: 'Direito Rural',
         subtitle:
-          'Aposentadoria rural, regularização e direitos do trabalhador do campo.',
+          'Aposentadoria, regularização do trabalhador do campo e prorrogação de dívidas rurais.',
         description: (
           <div>
             A_Definir
